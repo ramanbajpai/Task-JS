@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Information</h1>
+        <form id="employeeForm">
+            <label for="employeeName">Employee Name:</label>
+            <input type="text" id="employeeName" required pattern="[A-Za-z ]+">
+
+            <label for="employeeId">Employee ID:</label>
+            <input type="text" id="employeeId" required pattern="[0-9]+">
+
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" required pattern="[0-9]{10}">
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" max="2024-05-14">
+
+            <label for="location">Location:</label>
+            <select id="location">
+                <option value="" disabled selected>Select Location</option>
+            </select>
+
+            <button type="submit" >Add Employee</button>
+        </form>
+
+        <h2>Employee List</h2>
+        <table id="employeeTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Employee ID</th>
+                    <th>Phone Number</th>
+                    <th>Date of Birth</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTableBody"></tbody>
+        </table>
+    </div>
+    <div id="find">
+        <h1>Fnd by Id</h1>
+        <h4>ID</h4>
+        <input  id="findID" type="text"> <br><br>
+        <button id="find">FIND</button>
+        <h3 id="findName" type="text"></h3>
+        <h4 id="findDob" type="text"></h4><br><br>
+    </div>
+    <!-- <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        const firebaseConfig = {
+          apiKey: "AIzaSyBTr1KE3Z6CaE9Nrbx3au4-N5DZs6YSWx8",
+          authDomain: "crud-69aa2.firebaseapp.com",
+          databaseURL: "https://crud-69aa2-default-rtdb.asia-southeast1.firebasedatabase.app",
+          projectId: "crud-69aa2",
+          storageBucket: "crud-69aa2.appspot.com",
+          messagingSenderId: "1022845543460",
+          appId: "1:1022845543460:web:2e087092ba5372693964b1"
+        }; -->
+
+    <!-- //     const app = initializeApp(firebaseConfig);
+    //     employeeForm.addEventListener('submit', function(event) {
+    //     event.preventDefault();
+    //     const name = document.getElementById('employeeName').value;
+    //     const empId = document.getElementById('employeeId').value;
+    //     const phoneNumber = document.getElementById('phoneNumber').value;
+    //     const dob = document.getElementById('dob').value;
+    //     const location = locationSelect.options[locationSelect.selectedIndex].text;
+        
+    //     addEmployeeToTable(name, empId, phoneNumber, dob, location);
+
+    //     database.ref('employees/' + empId).set({
+    //         name: name,
+    //         id: empId,
+    //         phoneNumber: phoneNumber,
+    //         dob: dob,
+    //         location: location
+    //     });
+    // });
+    //   </script> -->
+    <script src="script.js"></script>
+</body>
+</html>
